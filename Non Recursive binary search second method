@@ -1,0 +1,41 @@
+#include<stdio.h>
+int nrecbin(int *a,int t,int n)
+{
+	int l=0;
+	int h=n-1;
+	while(l<=h)
+	{
+		int mid=(l+h)/2;
+		if(a[mid]==t)
+		{
+			return mid;
+		}
+		else if(a[mid]<t)
+		{
+			l=mid+1;
+		}
+		else
+		{
+			h=mid-1;
+		}
+	}
+	return -1;
+	
+	
+}
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	int a[n];
+	for(int i=0; i<n; i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	int t;
+	scanf("%d",&t);
+ int res=nrecbin(a,t,n);
+ printf("%d",res);
+}
+
+	                            
